@@ -6,6 +6,7 @@ public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject _container;
     [SerializeField] private int _amount;
+    
     private List<GameObject> _pool = new List<GameObject>();
 
     protected void Initialize(GameObject prefab)

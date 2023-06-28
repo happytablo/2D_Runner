@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -28,7 +27,7 @@ public class SpeedControl : MonoBehaviour
             yield return new WaitForSeconds(5f);
             _textWarning.alpha = 0;
 
-            float currentDuration = _isFastSpeed? (_swithDuration - _slowDuration) : _slowDuration;
+            float currentDuration = _isFastSpeed ? (_swithDuration - _slowDuration) : _slowDuration;
             yield return new WaitForSeconds(currentDuration);
 
             _isFastSpeed = !_isFastSpeed;

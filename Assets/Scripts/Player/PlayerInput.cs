@@ -4,11 +4,12 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMover _mover;
-    
+
     private void Start()
     {
         _mover = GetComponent<PlayerMover>();
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))

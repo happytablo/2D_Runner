@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,7 +18,7 @@ public class ScoreCounter : MonoBehaviour
     private IEnumerator AddScoreRoutine()
     {
         var waitForSeconds = new WaitForSeconds(_interval);
-        while(true)
+        while (true)
         {
             yield return waitForSeconds;
             AddScore(_scoreAmount);

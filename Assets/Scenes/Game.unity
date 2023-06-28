@@ -1838,7 +1838,7 @@ MonoBehaviour:
   - {fileID: 1595803425}
   - {fileID: 1867707337}
   _timeBetweenSpawns: 1.2
-  _minTimeBetweenSpawns: 0.5
+  _minTimeBetweenSpawns: 0.6
   _timeSpawnUp: 0.01
   _slowSpeed: 7
   _fastSpeed: 11
@@ -2746,7 +2746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686718570, guid: 87096c172099da642ac46d3f9a9684e0, type: 3}
       propertyPath: _health
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1584917241477160073, guid: 87096c172099da642ac46d3f9a9684e0, type: 3}
       propertyPath: m_IsTrigger

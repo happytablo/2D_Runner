@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -28,6 +26,7 @@ public class PlayerMover : MonoBehaviour
         _maxRotation = Quaternion.Euler(0, 0, _maxRotationZ);
 
     }
+
     private void Update()
     {
         if (_targetPosition != transform.position)
@@ -46,6 +45,7 @@ public class PlayerMover : MonoBehaviour
             SetNextRotation(_maxRotation);
         }
     }
+
     public void TryMoveDown()
     {
         if (_targetPosition.y > _minHeight)
@@ -55,15 +55,16 @@ public class PlayerMover : MonoBehaviour
             SetNextRotation(_minRotation);
         }
     }
+
     private void SetNextPosition(float stepSize)
     {
         _targetPosition = new Vector3(_targetPosition.x, _targetPosition.y + stepSize);
     }
+
     private void SetNextRotation(Quaternion rotationZ)
     {
         transform.rotation = rotationZ;
     }
-
     
     public void ResetRotate()
     {

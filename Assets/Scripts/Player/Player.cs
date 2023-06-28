@@ -1,20 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
-   [SerializeField] private int _health;
-   public event UnityAction<int> HealthChanged;
-   public event UnityAction _died;
+    [SerializeField] private int _health;
+    public event UnityAction<int> HealthChanged;
+    public event UnityAction _died;
 
-   private int _score;
-    
+    private int _score;
+
     private void Start()
     {
         HealthChanged?.Invoke(_health);
     }
+
     public void ApplyDamage(int damage)
     {
         _health -= damage;

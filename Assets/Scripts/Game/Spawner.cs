@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : ObjectPool
@@ -16,10 +14,13 @@ public class Spawner : ObjectPool
     [SerializeField] private SpeedControl _speedControl;
 
     private float _elapsedTime;
+    private int _previousPos;
+
     private void Start()
     {
         Initialize(_prefabs);
     }
+
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
@@ -51,35 +52,20 @@ public class Spawner : ObjectPool
             _timeBetweenSpawns -= _timeSpawnUp;
     }
 
-    // private int SetSpawnPoint()
-    // {   
-    //     for (int i = 0; i < _spawnPoints.Length; i++)
-    //     {
-    //         if (_spawnPoints[i].CheckWay())
-    //         {
-    //             Debug.Log($"!!!Обнаружен противник!!! position {i} ");
-    //             return i;
-    //         }
-    //     }
-    //     Debug.Log("противник не обнаружен");
-    //     return Random.Range(0, _spawnPoints.Length);
-    // }
-
     private void SetPosition(GameObject prefab, Vector3 position)
     {
         prefab.SetActive(true);
         prefab.transform.position = position;
     }
 
-    private int _previousPos;
     private int SetSpawnPoint()
     {
         int randomPosition;
+
         do
-        {
             randomPosition = Random.Range(0, 3);
-        }
         while (randomPosition == _previousPos);
+
         _previousPos = randomPosition;
         return _previousPos;
     }

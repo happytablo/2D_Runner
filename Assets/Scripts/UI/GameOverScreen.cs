@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -20,12 +18,14 @@ public class GameOverScreen : MonoBehaviour
         _restartButton.onClick.AddListener(OnRestartButtonClick);
         _exitButton.onClick.AddListener(OnExitButtonClick);
     }
+
     private void OnDisable()
     {
         _player._died -= OnDied;
         _restartButton.onClick.RemoveListener(OnRestartButtonClick);
         _exitButton.onClick.RemoveListener(OnExitButtonClick);
     }
+
     private void Start()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
@@ -36,6 +36,7 @@ public class GameOverScreen : MonoBehaviour
     {
         StartCoroutine(WaitBeforeDie());
     }
+
     private IEnumerator WaitBeforeDie()
     {
         Time.timeScale = 0;
@@ -48,6 +49,7 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
+    
     private void OnExitButtonClick()
     {
         SceneManager.LoadScene(0);

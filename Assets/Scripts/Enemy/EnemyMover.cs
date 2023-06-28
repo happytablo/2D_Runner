@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    //[SerializeField] private int _minDistance;
-    //[SerializeField] private int _maxDistance;
     [SerializeField] private float _rotationSpeed;
 
     private float _moveSpeed;
-
     private float _rotateSpeedUP = 3f;
     private float _timeBeforeSpeedUp = 5f;
     private float _elapsedTime;
@@ -18,6 +15,7 @@ public class EnemyMover : MonoBehaviour
     {
         _moveSpeed = moveSpeed;
     }
+
     private void Update()
     {
         transform.Translate(Vector3.left * _moveSpeed * Time.deltaTime, Space.World);

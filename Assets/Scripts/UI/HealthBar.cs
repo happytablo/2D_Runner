@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +17,7 @@ public class HealthBar : MonoBehaviour
     {
         _player.HealthChanged -= OnHealthChanged;
     }
+
     private void OnHealthChanged(int health)
     {
         if (_hearts.Count < health)

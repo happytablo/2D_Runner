@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,7 +10,8 @@ public class Enemy : MonoBehaviour
         {
             player.ApplyDamage(_damage);
         }
-        Die();       
+        
+        Die();
     }
 
     private void Die()
